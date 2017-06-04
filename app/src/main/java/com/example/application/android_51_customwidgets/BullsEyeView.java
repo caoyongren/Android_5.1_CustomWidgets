@@ -27,6 +27,8 @@ public class BullsEyeView extends View{
 
         width = getMeasurement(widthMeasureSpec, contentWidth);
         height = getMeasurement(heightMeasureSpec, contentHeight);
+        //必须使用测量值调用该方法；
+        setMeasuredDimension(width, height);
     }
 
     /* Constructor*/
@@ -45,6 +47,9 @@ public class BullsEyeView extends View{
         mCenter = new Point();
     }
 
+    /*
+     * 用于测量的宽度和高度的辅助方法；
+     * */
     private int getMeasurement(int measureSpec, int contentSize) {
         int specSize = MeasureSpec.getSize(measureSpec);
         switch (MeasureSpec.getMode(measureSpec)) {
